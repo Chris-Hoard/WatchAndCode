@@ -44,7 +44,7 @@ var todoList = {
         console.log(this.todos);
     },
     addTodos: function(addItem){
-         this.push(addItem);
+         this.todos.push(addItem);
          this.displayTodos();
     },
     changeTodos: function(position,newValue){
@@ -52,7 +52,7 @@ var todoList = {
          this.displayTodos();
     },
     removeTodos: function(position){
-        this.splice(position,1);
+        this.todos.splice(position,1);
         this.displayTodos();
     }
     
