@@ -77,6 +77,25 @@ var todoList = {
         var todo = this.todos[position];
         todo.completed = !todo.completed;
         this.displayTodos();
+    },
+    toggleAll: function(){
+        var totalTodos = this.todos.length;
+        var completedTodos = 0;
+        
+        for(var i = 0; i < totalTodos; i++){
+            if (this.todos[i].completed=== true){
+                completedTodos++;
+            }
+        }
+        for(var i = 0; i < totalTodos; i++){
+            if (completedTodos === totalTodos){
+                this.todos[i].completed = false;
+            } else {
+                this.todos[i].completed = true;
+            }
+            
+        }
+        this.displayTodos();
     }
     
 };
@@ -90,7 +109,10 @@ todoList.removeTodos(3);
 todoList.displayTodos();
 todoList.addTodos('first');
 todoList.addTodos('second');
+todoList.addTodos('third');
+todoList.toggleCompleted(1);
+todoList.toggleAll();
 //todoList.changeTodos(0,'Second try');
-todoList.toggleCompleted(0);
+//todoList.toggleCompleted(0);
 
 
