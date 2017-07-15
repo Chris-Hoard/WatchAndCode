@@ -41,7 +41,20 @@ function removeTodos(position){
 var todoList = {
     todos: [],
     displayTodos: function(){
-        console.log(this.todos);
+        if (this.todos.length === 0){
+            console.log("Your todo list is empty!");
+        }else{
+             console.log("My Todos:");
+            for(var i = 0; i < this.todos.length; i++){
+                
+                
+                if (this.todos[i].completed === true){
+                     console.log("(x)",this.todos[i].todoText);
+                } else {
+                    console.log("( )",this.todos[i].todoText);
+                }
+            }
+        }
     },
     addTodos: function(newValue){
          this.todos.push({
@@ -74,7 +87,10 @@ todoList.changeTodos(0,'item 1 updated');
 todoList.removeTodos(3);
 */
 //V4
-
-todoList.addTodos('first try');
-todoList.changeTodos(0,'Second try');
+todoList.displayTodos();
+todoList.addTodos('first');
+todoList.addTodos('second');
+//todoList.changeTodos(0,'Second try');
 todoList.toggleCompleted(0);
+
+//V5
