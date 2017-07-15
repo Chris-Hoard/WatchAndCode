@@ -105,7 +105,7 @@ todoList.addTodos("item 4");
 todoList.changeTodos(0,'item 1 updated');
 todoList.removeTodos(3);
 */
-//V6
+//V7
 todoList.displayTodos();
 todoList.addTodos('first');
 todoList.addTodos('second');
