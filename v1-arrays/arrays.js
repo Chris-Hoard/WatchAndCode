@@ -39,29 +39,42 @@ function removeTodos(position){
 */
 //V3- Objects
 var todoList = {
-    todos: ['item 1', 'item 2', 'item 3'],
+    todos: [],
     displayTodos: function(){
         console.log(this.todos);
     },
-    addTodos: function(addItem){
-         this.todos.push(addItem);
+    addTodos: function(newValue){
+         this.todos.push({
+             todoText:newValue,
+             completed:false
+             
+         });
          this.displayTodos();
     },
     changeTodos: function(position,newValue){
-         this.todos[position] = newValue;
+        // this.todos[position] = newValue;
+        this.todos[position].todoText = newValue;
          this.displayTodos();
     },
     removeTodos: function(position){
         this.todos.splice(position,1);
         this.displayTodos();
+    },
+    toggleCompleted: function(position){
+        var todo = this.todos[position];
+        todo.completed = !todo.completed;
+        this.displayTodos();
     }
     
 };
-
+/*
 todoList.displayTodos();
 todoList.addTodos("item 4");
 todoList.changeTodos(0,'item 1 updated');
 todoList.removeTodos(3);
-
+*/
 //V4
 
+todoList.addTodos('first try');
+todoList.changeTodos(0,'Second try');
+todoList.toggleCompleted(0);
