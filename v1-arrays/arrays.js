@@ -1,20 +1,38 @@
 //V1 - Arrays
 var todos = ['item 1', 'item 2', 'item 3'];
 
-console.log('My Todos:',todos);
+displayTodos();
 
-todos.push('item 4');
-console.log('My Todos:',todos);
+addTodos("item 4");
 
-todos[0] = 'item 1 updated';
-console.log('My Todos:',todos);
+changeTodos(0,'item 1 updated');
+removeTodos(3);
 
-todos.splice(3,1);
-console.log('My Todos:',todos);
+//todos.push('item 4');
+//displayTodos();
+
+//todos[0] = 'item 1 updated';
+//displayTodos();
+
+//todos.splice(3,1);
+//displayTodos();
 //V2 Functions
 
-function sayHito(person){
-    console.log("hi",person);
+function displayTodos(){
+    console.log('My Todos:',todos);
 }
 
-sayHito("Chris");
+function addTodos(addItem){
+    todos.push(addItem);
+    displayTodos();
+}
+
+function changeTodos(position,newValue){
+    todos[position] = newValue;
+    displayTodos();
+}
+
+function removeTodos(position){
+    todos.splice(position,1);
+    displayTodos();
+}
