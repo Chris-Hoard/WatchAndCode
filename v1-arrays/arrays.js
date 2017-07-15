@@ -36,3 +36,5 @@ function removeTodos(position){
     todos.splice(position,1);
     displayTodos();
 }
+
+//V3- Objects
