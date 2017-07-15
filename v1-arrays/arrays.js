@@ -38,3 +38,10 @@ function removeTodos(position){
 }
 
 //V3- Objects
+var myComputer = {
+    operatingSystem: "PC",
+    screenSize: "15 Inches",
+    purchaseYear: 2015
+};
+
+console.log(myComputer.screenSize);
